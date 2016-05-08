@@ -14,4 +14,4 @@ The slidify document with 5 slides is prepared and published at git hub at the l
 
 In perticular this repo has ui.R, server.R those required for shiny app.   
 
-The folder Slidify files contain index.html, index.Rmd, index.md and all other supprting files. 
+The repo also contain index.html, index.Rmd, index.md and all other supprting files. 
