@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/179276/8f510d8a85e5483182bd5eda85e720f3
+bundleId: https://api.rpubs.com/api/v1/document/179276/8f510d8a85e5483182bd5eda85e720f3
+url: http://rpubs.com/somnathbarole/179276
+when: 1462695828.63467
