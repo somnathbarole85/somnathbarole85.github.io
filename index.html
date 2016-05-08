@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reliability predictions using stress-strength interference</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Reliability predictions using stress-strength interference">
+  <meta name="author" content="Somnath S. Barole">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Reliability predictions using stress-strength interference</h1>
+    <h2></h2>
+    <p>Somnath S. Barole<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Reliability and Stress strength interference</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>When pressure or force is applied on a component, it induces stress in the component. More the applied force, more will be the stress.  </p>
+
+<p>Strength is a material property and this is unique for perticular material.   </p>
+
+<p>If induced stress in component is more than material strength then component will fail and will not be able to perform its intended function.    </p>
+
+<p>Reliability is the ability of a component/machine/system to perform it&#39;s intended function for specified time under predefined conditions.  </p>
+
+<p>Stregth and stresses are assumed to have normal distribution.   </p>
+
+<p>If we plot distribution of strength and stress then the overlapping or common area between these two curves gives the probability of failure. Reliability, also called probability of component to perform without any failure is given by (1-probability of failure).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Reliability and Stress strength interference</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Example:</h3>
+
+<p>Consider when the part is loaded (a) Stress developed is 300 MPa (b)Standard deviation of stress is 60 MPa (c)Strength of the material is 500 MPa and (d) Standard deviation of material strength is 50 MPa<br>
+Below is the code chunk that explains Reliability and probability of failure of the component.</p>
+
+<pre><code class="r">Strength_mean &lt;- 4000; Stress_sd &lt;- 400; Stress_mean &lt;- 2500; Strength_sd &lt;- 500;
+Z &lt;- (Strength_mean - Stress_mean) / sqrt((Strength_sd^2 + Stress_sd^2))
+Reliablity &lt;- round(pnorm(Z), digits = 4); Prob_fail &lt;- 1-Reliablity
+Reliablity
+</code></pre>
+
+<pre><code>## [1] 0.9904
+</code></pre>
+
+<pre><code class="r">Prob_fail
+</code></pre>
+
+<pre><code>## [1] 0.0096
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Reliability and Stress strength interference</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Below is the plot showing stress strength interference.
+The common area under these curve is the stress strength interference region and it gives probability of failure of the component.</p>
+
+<div style='text-align: center;'>
+    <img height='480' src='Fig2.png' />
+    </div>
+    
+
+<p>--- .class #id </p>
+
+<h2>Slide5</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>How to use this app??</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Yo can open the app at below link:   </p>
+
+<p><a href="https://reliabilitycalculator.shinyapps.io/Reliabilityapp/">https://reliabilitycalculator.shinyapps.io/Reliabilityapp/</a></p>
+
+<p>Enter the following inputs in the side bar panel   </p>
+
+<ol>
+<li><p>Mean value of the material strength    </p></li>
+<li><p>Standard deviation of material strength   </p></li>
+<li><p>Mean value of the stress developed in the component   </p></li>
+<li><p>Standard deviation of the stress    </p></li>
+</ol>
+
+<p>Once all inputs are entered, hit submit button. You can see calculated value of Reliability, Probability of failure and plot with distribution of stress strength on the right side.    </p>
+
+<p>More the value of Reliability, less the value of probability of failure indicates more likelyhood
+of component performing well without any failure.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Reliability and Stress strength interference'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Reliability and Stress strength interference'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Reliability and Stress strength interference'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How to use this app??'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
